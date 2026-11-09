@@ -488,3 +488,26 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* SM29 WebCreations Watermark */
+.site-watermark {
+    position: fixed;
+    bottom: 12px;
+    right: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #6d5268;
+    opacity: 0.65;
+    z-index: 10000;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .site-watermark {
+        font-size: 10px;
+        bottom: 8px;
+        right: 10px;
+    }
+}
