@@ -1,0 +1,490 @@
+
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff1e6,
+        #fce4f0,
+        #f8e8ff
+    );
+
+    color: #71465b;
+}
+
+.background-glow {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.9),
+        transparent 70%
+    );
+
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.birthday-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.gift-screen,
+.birthday-screen {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.top-text {
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #c06b91;
+    margin-bottom: 20px;
+}
+
+.gift-screen h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 6vw, 46px);
+    color: #a94d70;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #987887;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   GIFT BOX
+========================================== */
+
+.gift-wrapper {
+    width: 230px;
+    height: 240px;
+
+    margin: 65px auto 35px;
+
+    position: relative;
+    cursor: pointer;
+
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+.gift-shadow {
+    position: absolute;
+
+    width: 190px;
+    height: 25px;
+
+    bottom: 0;
+    left: 20px;
+
+    background: rgba(125, 63, 90, 0.2);
+
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.gift-box {
+    position: absolute;
+    width: 200px;
+    height: 190px;
+
+    left: 15px;
+    bottom: 20px;
+}
+
+
+/* ==========================================
+   GIFT BOX BODY
+========================================== */
+
+.box-body {
+    position: absolute;
+
+    width: 200px;
+    height: 145px;
+
+    bottom: 0;
+
+    background: linear-gradient(
+        135deg,
+        #f18caf,
+        #d85e8c
+    );
+
+    border-radius: 8px 8px 14px 14px;
+
+    box-shadow:
+        inset -12px -8px 20px rgba(120, 35, 70, 0.15),
+        0 15px 25px rgba(150, 70, 100, 0.2);
+}
+
+.box-ribbon {
+    position: absolute;
+
+    width: 38px;
+    height: 100%;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        #ffe8a6,
+        #fff4c9,
+        #e7c36d
+    );
+}
+
+
+/* ==========================================
+   GIFT BOX LID
+========================================== */
+
+.gift-lid {
+    position: absolute;
+
+    width: 220px;
+    height: 48px;
+
+    left: -10px;
+    top: 0;
+
+    z-index: 3;
+
+    background: linear-gradient(
+        135deg,
+        #fa9cba,
+        #d85e8c
+    );
+
+    border-radius: 9px;
+
+    box-shadow:
+        inset 0 -6px 10px rgba(120, 35, 70, 0.12),
+        0 7px 12px rgba(130, 50, 80, 0.18);
+
+    transition: transform 1s ease;
+}
+
+.lid-ribbon {
+    position: absolute;
+
+    width: 38px;
+    height: 100%;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        #ffe8a6,
+        #fff4c9,
+        #e7c36d
+    );
+}
+
+
+/* ==========================================
+   GIFT BOW
+========================================== */
+
+.bow {
+    position: absolute;
+
+    top: -32px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 75px;
+    height: 40px;
+}
+
+.bow span {
+    position: absolute;
+
+    width: 38px;
+    height: 30px;
+
+    border: 8px solid #e8c46e;
+
+    border-radius: 50% 50% 10% 50%;
+}
+
+.bow span:first-child {
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.bow span:last-child {
+    right: 0;
+    transform: rotate(65deg) scaleX(-1);
+}
+
+
+/* ==========================================
+   GIFT HOVER EFFECT
+========================================== */
+
+.gift-wrapper:hover {
+    transform: scale(1.06) translateY(-8px);
+}
+
+.click-text {
+    font-size: 15px;
+    color: #a36d84;
+
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+
+/* ==========================================
+   GIFT OPENING ANIMATION
+========================================== */
+
+.gift-wrapper.opened {
+    animation: none;
+}
+
+.gift-wrapper.opened .gift-lid {
+    transform: translateY(-125px) rotate(-18deg);
+}
+
+
+/* ==========================================
+   BIRTHDAY SCREEN
+========================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.birthday-screen {
+    animation: revealBirthday 1.2s ease forwards;
+}
+
+@keyframes revealBirthday {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.birthday-content {
+    padding: 35px 25px;
+}
+
+.birthday-decoration {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.surprise-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #c06b91;
+    margin-bottom: 20px;
+}
+
+.birthday-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(42px, 9vw, 70px);
+
+    color: #c44f83;
+
+    text-shadow: 2px 4px 12px rgba(190, 80, 125, 0.15);
+
+    margin-bottom: 15px;
+}
+
+.birthday-name {
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 5vw, 36px);
+
+    color: #a94d70;
+    margin-bottom: 25px;
+}
+
+.birthday-message {
+    max-width: 500px;
+    margin: 0 auto;
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    color: #886878;
+}
+
+.birthday-cake {
+    font-size: 65px;
+    margin: 25px 0;
+
+    animation: cakeBounce 2s infinite;
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.final-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #bd6387;
+}
+
+
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
+
+.music-button {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #c65d87;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(150, 60, 100, 0.2);
+
+    z-index: 10001;
+}
+
+.music-button:hover {
+    background: #a94d70;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+
+    .gift-wrapper {
+        transform: scale(0.9);
+        margin-top: 45px;
+        margin-bottom: 25px;
+    }
+
+    .gift-wrapper:hover {
+        transform: scale(0.95) translateY(-5px);
+    }
+
+    .birthday-content {
+        padding: 20px 10px;
+    }
+
+    .birthday-message {
+        font-size: 15px;
+    }
+
+    .birthday-decoration {
+        font-size: 24px;
+    }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

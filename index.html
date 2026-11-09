@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Special Birthday Surprise🎁</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background-glow"></div>
+
+    <main class="birthday-container">
+
+        <!-- Initial Screen -->
+        <section id="giftScreen" class="gift-screen">
+
+            <p class="top-text">A LITTLE WISH FOR YOU✨</p>
+
+            <h1>A Little Something to Make You Smile!</h1>
+
+            <p class="subtitle">
+                Just a small birthday wish to make your special day even more cheerful!🌟
+            </p>
+
+            <!-- Animated Gift Box -->
+            <div class="gift-wrapper" id="giftBox">
+
+                <div class="gift-shadow"></div>
+
+                <div class="gift-box">
+
+                    <div class="gift-lid">
+                        <div class="lid-ribbon"></div>
+                        <div class="bow">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="box-body">
+                        <div class="box-ribbon"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="click-text">
+                Tap the gift box to open your surprise!🎁
+            </p>
+
+        </section>
+
+
+        <!-- Birthday Surprise Screen -->
+        <section id="birthdayScreen" class="birthday-screen hidden">
+
+            <div class="birthday-content">
+
+                <div class="birthday-decoration">
+                    🎉 🎊 ✨ 🎈
+                </div>
+
+                <p class="surprise-label">
+                    YOUR SPECIAL DAY IS HERE!
+                </p>
+
+                <h1 class="birthday-title">
+                    Happy Birthday!
+                </h1>
+
+                <h2 class="birthday-name">
+                    Aditya! 🎂
+                </h2>
+
+                <p class="birthday-message">
+                    May your day be filled with endless happiness,
+                    beautiful memories, countless smiles and
+                    everything your heart wishes for💫
+                </p>
+
+                <div class="birthday-cake">
+                    🎂
+                </div>
+
+                <p class="final-text">
+                    Make a wish and keep shining!✨
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Birthday Music -->
+    <audio id="birthdayMusic" loop preload="auto">
+        <source src="./birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- Music Button -->
+    <button id="musicButton" class="music-button hidden">
+        🎵 Play Music
+    </button>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
